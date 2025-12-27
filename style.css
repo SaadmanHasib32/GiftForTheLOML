@@ -1,0 +1,91 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Page */
+html, body {
+    width: 100%;
+    height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Center mobile layout */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* App container (mobile-first) */
+.app {
+    width: 100%;
+    max-width: 500px;
+    min-width: 320px;
+    height: 100vh;
+    min-height: 480px;
+    max-height: 1000px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: url("images/bg.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+/* Timer row */
+.timer {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+/* Each unit */
+.time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Numbers */
+.num {
+    font-weight: 700;
+    font-size: clamp(1.8rem, 6vw, 3rem);
+}
+
+/* Labels */
+.label {
+    font-size: clamp(0.7rem, 2.5vw, 1rem);
+    opacity: 0.85;
+}
+
+/* Button */
+#nextBtn {
+    margin-top: 32px;
+    padding: 12px 26px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Button active after new year */
+#nextBtn.active {
+    opacity: 1;
+    cursor: pointer;
+    background: #ffd700;
+}
+
+/* Desktop polish only */
+@media (min-width: 768px) {
+    .app {
+        border-radius: 24px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    }
+}
