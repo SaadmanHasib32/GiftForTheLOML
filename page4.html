@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 4</title>
+
+  <link rel="stylesheet" href="page4.css">
+</head>
+<body>
+
+  <!-- BGM 4 -->
+  <audio id="bgm4" autoplay loop>
+    <source src="bgm4.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="retryBtn">Try Again</button>
+
+  <script>
+    const retryBtn = document.getElementById("retryBtn");
+
+    retryBtn.addEventListener("click", () => {
+      window.location.href = "page2.html";
+    });
+  </script>
+
+</body>
+</html>
