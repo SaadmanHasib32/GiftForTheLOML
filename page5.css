@@ -25,7 +25,7 @@ html, body {
   position: absolute;
   width: 100%;
   text-align: center;
-  color: black;
+  color: #0a2a66; /* 🔵 blue text */
   font-weight: 700;
   font-size: clamp(1.8rem, 6vw, 3rem);
   opacity: 0;
@@ -41,29 +41,29 @@ html, body {
 }
 
 .below {
-  top: 55%;
+  top: 60%; /* ⬇️ lowered "now" */
   font-size: clamp(1.5rem, 5vw, 2.4rem);
 }
 
 /* Fade-left animation */
 .fade-left {
   animation-name: fadeLeft;
-  animation-duration: 1s;      /* EXACTLY 1 second */
+  animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
 }
 
-/* SEQUENTIAL delays */
+/* Sequential timing */
 .delay-1 {
-  animation-delay: 0s;         /* starts immediately */
+  animation-delay: 0s;
 }
 
 .delay-2 {
-  animation-delay: 1s;         /* starts after first ends */
+  animation-delay: 1s;
 }
 
 .delay-3 {
-  animation-delay: 2s;         /* starts after second ends */
+  animation-delay: 2s;
 }
 
 @keyframes fadeLeft {
