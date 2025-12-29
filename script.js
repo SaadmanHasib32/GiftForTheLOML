@@ -1,9 +1,16 @@
+// Countdown elements
 const daysEl = document.getElementById("days");
 const hoursEl = document.getElementById("hours");
 const minutesEl = document.getElementById("minutes");
 const secondsEl = document.getElementById("seconds");
 const nextBtn = document.getElementById("nextBtn");
 
+// Sound button & BGM
+const bgm = document.getElementById("bgm");
+const soundBtn = document.getElementById("soundBtn");
+let isPlaying = false;
+
+// Disable next button initially
 nextBtn.disabled = true;
 
 // 1-minute test timer
@@ -22,7 +29,7 @@ function updateCountdown() {
     nextBtn.classList.add("active");
     nextBtn.disabled = false;
     nextBtn.onclick = () => {
-      window.location.href = "page2.html";
+      window.location.href = "page2.html"; // Change to your second page
     };
     return;
   }
@@ -41,3 +48,22 @@ function updateCountdown() {
 }
 
 updateCountdown();
+
+// 🔊 Sound button functionality
+soundBtn.addEventListener("click", () => {
+  if (!isPlaying) {
+    bgm.currentTime = 0; // start from beginning
+    bgm.play().catch(() => {});
+    isPlaying = true;
+    soundBtn.classList.add("playing");
+  } else {
+    if (!bgm.paused) {
+      bgm.pause();
+      soundBtn.classList.remove("playing");
+    } else {
+      bgm.currentTime = 0; // restart from beginning
+      bgm.play().catch(() => {});
+      soundBtn.classList.add("playing");
+    }
+  }
+});
