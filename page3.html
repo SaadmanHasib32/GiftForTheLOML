@@ -16,38 +16,16 @@
   <!-- Next button -->
   <button id="nextBtn">Go to Next Page</button>
 
-  <!-- Optional: 🔊 button -->
-  <div id="soundBtn">🔊</div>
-
   <script>
     const bgm2 = document.getElementById("bgm2");
     const nextBtn = document.getElementById("nextBtn");
-    const soundBtn = document.getElementById("soundBtn");
+
     let isPlaying = false;
 
     // Try autoplay once page loads (may fail on mobile)
     bgm2.play().catch(() => {
-      // Fallback: user must click 🔊
-      console.log("Autoplay blocked, click 🔊 to play");
-    });
-
-    // 🔊 button toggle
-    soundBtn.addEventListener("click", () => {
-      if (!isPlaying) {
-        bgm2.currentTime = 0;
-        bgm2.play().catch(() => {});
-        isPlaying = true;
-        soundBtn.classList.add("playing");
-      } else {
-        if (!bgm2.paused) {
-          bgm2.pause();
-          soundBtn.classList.remove("playing");
-        } else {
-          bgm2.currentTime = 0;
-          bgm2.play().catch(() => {});
-          soundBtn.classList.add("playing");
-        }
-      }
+      // Fallback: user must click anywhere to play
+      console.log("Autoplay blocked, tap to play");
     });
 
     // Next button
