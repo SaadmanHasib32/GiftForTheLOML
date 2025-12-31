@@ -8,15 +8,33 @@
 </head>
 <body>
 
+  <!-- Background music (plays once) -->
+  <audio id="bgm5">
+    <source src="audio/bgm5.mp3" type="audio/mpeg">
+  </audio>
+
   <div class="page">
 
-    <!-- Gift Box -->
-    <div class="gift-box">
-      <div class="lid"></div>
-      <div class="box"></div>
+    <!-- Glow burst -->
+    <div class="glow"></div>
+
+    <!-- Sparkles -->
+    <div class="sparkles">
+      <span></span><span></span><span></span><span></span><span></span>
     </div>
 
-    <!-- Background reveal layer -->
+    <!-- Gift box -->
+    <div class="gift-box">
+      <div class="lid">
+        <div class="ribbon-h"></div>
+        <div class="ribbon-v"></div>
+      </div>
+      <div class="box">
+        <div class="ribbon-v"></div>
+      </div>
+    </div>
+
+    <!-- Background reveal -->
     <div class="bg-reveal"></div>
 
     <!-- Button -->
@@ -25,6 +43,13 @@
   </div>
 
   <script>
+    // Play bgm5 once on page load
+    const bgm = document.getElementById("bgm5");
+    window.addEventListener("load", () => {
+      bgm.currentTime = 0;
+      bgm.play().catch(() => {});
+    });
+
     function goNext() {
       window.location.href = "page10.html";
     }
