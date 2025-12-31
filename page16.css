@@ -1,0 +1,28 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.page16 {
+    width: 100%;
+    height: 100vh;
+    background: url("images/bg16.jpg") no-repeat center center;
+    background-size: cover;
+
+    opacity: 0;
+    animation: fadeInBg 1s ease forwards; /* 1s fade-in */
+}
+
+@keyframes fadeInBg {
+    to {
+        opacity: 1;
+    }
+}

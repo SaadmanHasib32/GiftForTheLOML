@@ -1,0 +1,59 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.page14 {
+    width: 100%;
+    height: 100vh;
+    background: url("images/bg14.jpg") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    opacity: 0;
+    animation: fadeInBg 1s ease forwards; /* 1s fade-in */
+}
+
+@keyframes fadeInBg {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Centered next button */
+#nextBtn {
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: #001f5b; /* dark blue */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    opacity: 0; /* start hidden */
+    animation: fadeInBtn 0.5s ease forwards;
+    animation-delay: 1.5s; /* 1s bg + 0.5s delay */
+}
+
+#nextBtn:active {
+    opacity: 0.8;
+}
+
+/* Button fade-in keyframes */
+@keyframes fadeInBtn {
+    to {
+        opacity: 1;
+    }
+}
