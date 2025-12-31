@@ -1,0 +1,83 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Page */
+.page {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: black;
+}
+
+/* Background fade in */
+.bg {
+  position: absolute;
+  inset: 0;
+  background: url("images/bg10.jpg") no-repeat center center;
+  background-size: cover;
+  opacity: 0;
+  animation: fadeBg 1s ease forwards;
+  z-index: 0;
+}
+
+@keyframes fadeBg {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Gift video */
+.gift-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  width: 90%;
+  max-width: 900px;     /* prevents touching sides */
+  aspect-ratio: 16 / 9;
+
+  opacity: 0;
+  animation: fadeVideo 1s ease forwards;
+  animation-delay: 1s; /* after bg fades */
+
+  z-index: 1;
+}
+
+/* Fade in video */
+@keyframes fadeVideo {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Button (slightly smaller) */
+.next-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+
+  background: #0a2a66;
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 2;
+}
